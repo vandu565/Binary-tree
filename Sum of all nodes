@@ -1,0 +1,11 @@
+int sumOfAllNodes(BinaryTreeNode<int>* root) {
+    // Write your code here
+if(root==NULL)//NOT -1 BALKI null
+{return 0;}
+    int sum=0;
+    sum=root->data;
+    int k=sumOfAllNodes(root->left);
+    int t=sumOfAllNodes(root->right);
+    sum=sum+k+t;
+    return sum;
+}
