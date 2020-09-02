@@ -1,0 +1,37 @@
+void mirrorBinaryTree(BinaryTreeNode<int>* root) {
+    // Write your code here
+    if(root==NULL)
+    {
+        return;
+    }
+    if(root->left==NULL&&root->right==NULL){   // ye likhna h
+        return;
+    }
+    // BinaryTreeNode<int>*k=root->right;
+    // root->right->data=root->left->data;
+    // root->left->data=k->data;
+    if(root->right!=NULL)
+    {
+        mirrorBinaryTree(root->right);
+    }
+    if(root->left!=NULL)
+    {
+        mirrorBinaryTree(root->left);
+    }
+    
+    
+    // yahan pr tum data ko swap kr rhe ho....instead tumhe nodes ko swap krna h
+    
+    // BinaryTreeNode<int>*k=root->right;
+    // root->right->data=root->left->data;
+    // root->left->data=k->data;
+    
+    
+    // do like this 
+    
+    BinaryTreeNode<int>*k=root->right;
+    root->right=root->left;
+    root->left=k;
+    
+    
+}
