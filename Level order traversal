@@ -1,0 +1,28 @@
+void printLevelATNewLine(BinaryTreeNode<int> *root) {
+    // Write your code here
+queue<BinaryTreeNode<int>*>pending;
+    pending.push(root);
+    pending.push(NULL);
+    while(pending.size()!=0)
+    {BinaryTreeNode<int>*front=pending.front();
+     pending.pop();
+     if(front!=NULL)
+     {cout<<front->data<<" ";}
+     else
+     {if(pending.size()!=0)
+     {pending.push(NULL);
+        cout<< endl;
+      continue;}// continue ni lagya ..nhi toh null ka left right aa jayega 
+      else
+      {break;}//break ni lgaya
+     }
+     
+     if(front->left!=NULL)
+     {pending.push(root->left);}
+     if(front->right!=NULL)
+     {pending.push(root->right);}
+     
+        
+    }
+        
+}
